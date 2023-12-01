@@ -1,0 +1,138 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
+}
+
+.login
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  background: rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+.login h2
+{
+  margin: 0;
+  padding: 5px 0;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.login .inputbox
+{
+  position: relative;
+}
+.login .inputbox input
+{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+}
+.login .inputbox label
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 2px;
+  margin-left: 25px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #e5fafa;
+  pointer-events: none;
+  transition: .5s;
+}
+.login .inputbox i
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 12px 0;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login .inputbox input:focus ~ label,
+.login .inputbox input:valid ~ label,
+.login .inputbox input:focus ~ i,
+.login .inputbox input:valid ~ i
+{
+  top: -18px;
+  left: 0;
+  color: #03a9f4;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.login a
+{
+  position: absolute;
+  left: 50%;
+  width:125px;
+  height:35px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  padding-top: 10px;
+  margin-top: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 15px;
+  letter-spacing: 2px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, #03a9f4, #f441a5,  #03a9f4);
+  background-size: 400%;
+  z-index: 1;
+  }
+.login a:hover
+{
+  animation: animate 8s linear infinite;
+}
+@keyframes animate
+{
+  0%
+  {
+    background-position: 0%;
+  }
+  100%
+  {
+    background-position: 100%;
+  }
+}
+
+.login a:before
+{
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  filter: blur(20px);
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.login a:hover:before
+{
+  filter: blur(20px);
+  opacity: 1;
+  animation: animate 8s linear infinite;
+}
