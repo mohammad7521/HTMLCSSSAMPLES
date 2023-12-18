@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.min.js"></script>
+
+
+  <title>Document</title>
+</head>
+<body>
+  <div id="vue">
+    <div class="flex x_center" id="shop">
+      <div class="product" v-for="product in products"><img :src="'//zupra.github.io/t-shirt_shop/img/test-2/'+product.id+'.png'"/>
+        <div class="product_name">{{ product.name }}</div>
+        <div class="flex x_se">
+          <div class="product_price">{{ product.price }} ₽</div>
+          <div class="product_count flex y_center">
+            <div class="btn qtyMinus" :class="{disabled: !product.qty}" @click="(product.qty &gt; 1) ? product.qty -= 1 : $delete(product, 'qty')"></div>
+            <div class="W_2em">{{ !product.qty ? 0 : product.qty }}</div>
+            <div class="btn qtyPlus" @click="addToCart(product)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Cart">
+      <transition name="cartUpdate">
+        <div class="cartUpdate" :key="count"> <b>{{count}} / {{total}} </b>₽</div>
+      </transition>
+      <div class="Cart_item flex y_center x_sb" v-for="product,idx in cart">
+        <div class="flex y_center">{{idx + 1}}) &nbsp;
+          <div class="name">{{ product.name }} &nbsp;</div><b>{{ product.price }} ₽</b>
+        </div>
+        <div class="flex y_center">
+          <div class="btn qtyMinus" :class="{disabled: !product.qty}" @click="(product.qty &gt; 1) ? product.qty -= 1 : ''"></div>
+          <center class="W_2em">{{ !product.qty ? 0 : product.qty }}</center>
+          <div class="btn qtyPlus" @click="addToCart(product)"></div>
+          <center class="W_3em">{{product.qty * product.price}}</center>
+          <div class="Del" @click="$delete(product, 'qty')">✖ </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
