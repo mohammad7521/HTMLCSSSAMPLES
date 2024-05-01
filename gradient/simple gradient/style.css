@@ -1,0 +1,46 @@
+:root{
+    --gradient:linear-gradient(
+        45deg,
+        #845ec2,
+        #d65db1,
+        #ff6f91,
+        #ffc75f
+    )
+}
+
+body{
+    background-image: var(--gradient);
+    height: 100vh;
+    background-size: 400%;
+    animation:bg-animation 10s infinite alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* animation syntax */
+@keyframes bg-animation{
+    0%{
+        background-position: left;
+    }
+
+    100%{
+        background-position: right;
+    }
+}
+
+
+.box{
+    padding: 0.5em 1.5em;
+    background-color: white;
+    font-size:3rem;
+    font-style: bold;
+}
+
+h1{
+    background-image: var(--gradient);
+    background-clip:text;
+    color: transparent;
+    background-size: 300%;
+    animation:bg-animation 2s infinite alternate;
+    
+}
