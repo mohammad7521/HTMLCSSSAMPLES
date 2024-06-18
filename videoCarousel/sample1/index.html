@@ -1,0 +1,214 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>video carousel - Bootstrap</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        html,
+body {
+  height: 100%;
+}
+.carousel {
+  width: 100%;
+  background-color: #000;
+  height: 100%;
+}
+.carousel-fade .carousel-inner .item {
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0;
+}
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-fade .carousel-control .glyphicon {
+  font-size: 6rem;
+}
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 100%;
+}
+.stopfade {
+  opacity: 0.5;
+}
+.slide-content {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+.slide-content video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
+}
+.slide-content video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+.door {
+  font-family: Revista-Black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.door .title {
+  font-size: 14rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  line-height: 13rem;
+}
+.door .description {
+  border-top: 1px solid #fff;
+  margin-top: 15px;
+  font-size: 4rem;
+}
+@media screen and (max-width: 640px) {
+    .door .description {
+  font-size: 2rem;
+}
+.door .title {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  line-height: 5rem;
+}
+.carousel-fade .carousel-control .glyphicon {
+  font-size: 3rem;
+}
+
+}
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+  <ol class="carousel-indicators">
+      <li data-target="#carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel" data-slide-to="1"></li>
+      <li data-target="#carousel" data-slide-to="2"></li>
+      <li data-target="#carousel" data-slide-to="3"></li>
+  </ol>
+  
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="slide-content">
+        <video poster="http://www.pierrewinther.com/wp-content/uploads/2017/08/new-finlandia-girl-2.jpg" webkit-playsinline id="bgvid" loop>
+          <source src="http://www.pierrewinther.com/wp-content/uploads/2016/09/web-finlandia.mp4" type="video/mp4">
+        </video>
+        <div class="slide-overlay door">
+          <div class='title'>Slide 1</div>
+          <div class="description">PIERRE WINTHER</div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="slide-content">
+        <video poster="http://www.pierrewinther.com/wp-content/uploads/2016/04/Screenshot-2017-03-08-10.11.32-copy.jpg" webkit-playsinline id="bgvid" loop>
+          <source src="http://www.pierrewinther.com/wp-content/uploads/2016/04/Arrival.mp4" type="video/mp4">
+        </video>
+        <div class="slide-overlay door">
+          <div class='title'> Slide 2 </div>
+          <div class="description">PIERRE WINTHER</div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="slide-content">
+        <video poster="" webkit-playsinline id="bgvid" loop>
+          <source src="http://www.pierrewinther.com/wp-content/uploads/2017/03/faces.mp4?_=5">
+        </video>
+        <div class="slide-overlay door">
+          <div class='title'>Slide 3</div>
+          <div class="description">PIERRE WINTHER</div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="slide-content">
+        <video poster="http://www.pierrewinther.com/wp-content/uploads/2017/08/PW0345-rgb.jpg" webkit-playsinline id="bgvid" loop>
+          <source src="http://www.pierrewinther.com/wp-content/uploads/2016/04/Dinlandia-web-small.mp4" type="video/mp4">
+        </video>
+        <div class="slide-overlay door">
+          <div class='title'>Slide 4</div>
+          <div class="description">PIERRE WINTHER</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="carousel-control left" href="#carousel" data-slide="prev">
+   <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  
+  <a class="carousel-control right" href="#carousel" data-slide="next">
+   <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+  
+</div>
+
+<script type="text/javascript">
+// If not iPhone, play first video and setup event handlers for  carousel rotations
+// iPhone will not play videos inline, and will take control of the browser
+if(!/iPhone/i.test(navigator.userAgent)) {
+   
+    $('.active > div > video').get(0).play();
+
+    $('#carousel').bind('slide.bs.carousel', function(e) {
+      $(e.relatedTarget).find('video').get(0).play();
+    });
+
+    $('#carousel').bind('slid.bs.carousel', function(e) {
+      $('video').not('.active > div > video').each(function() {
+        $(this).get(0).pause();
+      });
+    });
+  }
+</script>
+</body>
+</html>

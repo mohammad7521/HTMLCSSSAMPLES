@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video carousel bootstrap</title>
+</head>
+<body>
+
+    <!-- carousel container -->
+     <!-- data-ride makes carousel play automatically -->
+      <!-- setting data-interval to false to prevent play by interval -->
+    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+
+        <!-- indicators -->
+         <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+         </ol>
+
+         <!-- carousel items -->
+          <!-- carousel-inner specifies the carousel items -->
+           <div class="carousel-inner">
+                <div class="item active">
+                    <div class="slide-content">
+                        <video width="100%" autoplay loop muted src="callOfDuty.mp4"></video>
+                        <div class="slide-overlay">
+                            <p>call of duty</p>
+                        </div>
+                    </div>
+                </div>
+           </div>
+
+    </div>
+</body>
+</html>
