@@ -17,7 +17,7 @@ const contentMarkers = gsap.utils.toArray(".contentMarker");
 
 // Set up our content behaviors
 contentMarkers.forEach(marker => {
-  console.log(`#${marker.dataset.markerContent}`)
+
   marker.content = document.querySelector(`#${marker.dataset.markerContent}`);
   if(marker.content.tagName === "IMG") {
     gsap.set(marker.content, {transformOrigin: "center"});
@@ -43,7 +43,6 @@ contentMarkers.forEach(marker => {
 let lastContent;
 function getCurrentSection() {
   let newContent;
-  console.log(scrollY);
   const currScroll = scrollY;
   
   // Find the current section
@@ -51,7 +50,9 @@ function getCurrentSection() {
     if(currScroll > marker.offsetTop) {
       newContent = marker.content;
     }
+    console.log(marker)
   });
+
   
   // If the current section is different than that last, animate in
   if(newContent
